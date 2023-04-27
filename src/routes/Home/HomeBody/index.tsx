@@ -10,9 +10,11 @@ export default function HomeBody() {
       <main>
         <section>
           <div className="mt30 container">
-           <TitleHomeBody title ='Desafio Github API'
 
-           subTitle = 'DevSuperior - Escola de programação'/>
+            <TitleHomeBody title='Desafio Github API'
+
+              subTitle='DevSuperior - Escola de programação' />
+
 
             <div className="mt30 dflex">
               <Link to="/before">
