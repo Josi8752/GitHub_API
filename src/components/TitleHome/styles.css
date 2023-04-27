@@ -1,0 +1,12 @@
+
+.titleHomeBody h1 {
+    font-weight: 700;
+    font-size: 48px;
+    color: var(--color-font-secundary);
+}
+
+.titleHomeBody h4{
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--color-font-tertiary);
+}

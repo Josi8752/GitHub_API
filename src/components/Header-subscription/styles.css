@@ -1,0 +1,8 @@
+.header-sub {
+    align-items: center;
+    display: flex;
+    color: var(--color-font-secundary);
+    font-size: 32px;
+    justify-content: space-around;
+    padding: 38px 0 45px 0;
+}
