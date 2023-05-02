@@ -7,6 +7,7 @@ import { UsuarioDTO } from "../../../models/usuarioDTO";
 import * as usuarioService from '../../../services/usuario-services';
 import { useNavigate } from "react-router-dom";
 import CardResult from "../../../components/CardResult";
+import NotFound from "../../../components/NotFound";
 
 
 
@@ -23,7 +24,7 @@ export default function ResultGithub() {
     }
   );
 
-
+  const [error, setError] = useState();
 
   function handleInputChange(event: any) {
     const value = event.target.value;
@@ -38,7 +39,10 @@ export default function ResultGithub() {
 
       .then(response => {
         setUserData(response.data);
-      })
+      }).catch((error) => {
+        setError(error.response.data);
+        setUserData(undefined);
+      }), [formData];
   }
 
   return (
@@ -65,6 +69,14 @@ export default function ResultGithub() {
               </div>
             </div>
           </div>
+        </section>
+        <section className="container-section">
+          {
+            (userData && <CardResult userDTO={userData} />)
+            || (error && <div className="container-card">
+              <NotFound title='Usuário não encontrado' />
+            </div>)};
+
         </section>
       </main>
     </>
