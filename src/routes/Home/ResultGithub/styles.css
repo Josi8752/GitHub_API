@@ -27,3 +27,7 @@
 .input input::placeholder {
     color: var(--color-placeholder);
 }
+
+.input input:focus {
+    outline: none;
+}

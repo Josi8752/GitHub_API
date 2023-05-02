@@ -1,8 +1,8 @@
-import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom";
 import Home from "./routes/Home";
 import HomeBody from "./routes/Home/HomeBody";
-import Before from "./routes/Before";
-import Subscription from "./routes/Subscription";
+import Before from "./routes/Home/ResultGithub";
+
 
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
             <Route index element={<HomeBody />} />
             <Route path="before" element={<Before/>}/>
           </Route>
-          <Route path="/subscription" element={<Subscription/>}/>
+          <Route index element={<Navigate to= '/'/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
