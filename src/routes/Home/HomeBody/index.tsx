@@ -17,7 +17,7 @@ export default function HomeBody() {
 
 
             <div className="mt30 dflex">
-              <Link to="/before">
+              <Link to="/buscar">
                 <Btn title="Começar" />
               </Link>
             </div>

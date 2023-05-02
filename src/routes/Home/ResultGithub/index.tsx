@@ -44,43 +44,60 @@ export default function ResultGithub() {
         setUserData(undefined);
       }), [formData];
   }
+  function notFound() {
 
-  return (
-    <>
-      <main>
-        <section>
-          <div className="container mt30 mb30">
-            <div className='card'>
-              <Card text="Encontre um perfil Github" />
-              <div className="input mt30 ">
-                <form onSubmit={handleSubmit}>
-                  <input
-                    type="text"
-                    name="user"
-                    value={formData.user}
-                    placeholder="Usuário Github"
-                    onChange={handleInputChange}
-                  />
-                </form>
+    usuarioService.userGithub(formData.user)
+
+      .then(response => {
+        setUserData(response.data);
+      }).catch((error) => {
+        while (setError(error.response.data) === setUserData(undefined)) {
+          return (
+            <NotFound
+              title='Usuário não encontrado' />
+)
+
+  }
+
+}), [formData];
+  }
+
+return (
+  <>
+    <main>
+      <section>
+        <div className="container mt30 mb30">
+          <div className='card'>
+            <Card text="Encontre um perfil Github" />
+            <div className="input mt30 ">
+              <form onSubmit={handleSubmit} >
+                <input id="input"
+                  type="text"
+                  name="user"
+                  value={formData.user}
+                  placeholder="Usuário Github"
+                  onChange={handleInputChange}
+                />
                 <div className="mt30 dflex">
 
                   <Btn title="Encontrar" />
                 </div>
-              </div>
+              </form>
+
             </div>
           </div>
-        </section>
-        <section className="container-section">
-          {
-            (userData && <CardResult userDTO={userData} />)
-            || (error && <div className="container-card">
-              <NotFound title='Usuário não encontrado' />
-            </div>)};
+        </div>
+      </section>
+      <section className="container-section">
+        {
+          (userData && <CardResult userDTO={userData} />)
+          || (error && <div className="container-card" onSubmit={notFound}>
+          </div>)}
 
-        </section>
-      </main>
-    </>
+      </section>
+    </main>
+  </>
 
 
-  );
+);
 }

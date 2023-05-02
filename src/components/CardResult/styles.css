@@ -29,14 +29,14 @@
 }
 
 .sub-title-card-result {
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   color: var(--text-card-result-secondy);
 }
 
 .data-result-container p {
   color: var(--text-card-result-secondy);
-  font-size: 0.90rem;
+  font-size: 10px;
 }
 
 .data-result-container a,

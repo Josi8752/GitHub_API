@@ -1,7 +1,7 @@
 import { BrowserRouter, Navigate, Outlet, Route, Routes } from "react-router-dom";
 import Home from "./routes/Home";
 import HomeBody from "./routes/Home/HomeBody";
-import Before from "./routes/Home/ResultGithub";
+import ResultGithub from "./routes/Home/ResultGithub";
 
 
 
@@ -13,10 +13,10 @@ export default function App() {
       <Routes>
         <Route>
           <Route path="/" element={<Home />}>
-            <Route index element={<HomeBody />} />
-            <Route path="before" element={<Before/>}/>
+            <Route index element={<Navigate to="/home" />} />
+            <Route path="home" element={<HomeBody />} />
+            <Route path="buscar" element={<ResultGithub />} />
           </Route>
-          <Route index element={<Navigate to= '/'/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
