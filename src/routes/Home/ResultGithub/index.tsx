@@ -1,13 +1,14 @@
 
 import { useEffect, useState } from "react";
 import Btn from "../../../components/Btn";
-import Card from "../../../components/CardBefore";
+
 import './styles.css';
 import { UsuarioDTO } from "../../../models/usuarioDTO";
 import * as usuarioService from '../../../services/usuario-services';
 import { useNavigate } from "react-router-dom";
 import CardResult from "../../../components/CardResult";
 import NotFound from "../../../components/NotFound";
+import Card from "../../../components/Card";
 
 
 
@@ -20,7 +21,7 @@ export default function ResultGithub() {
   const [userData, setUserData] = useState<UsuarioDTO>();
   const [formData, setFormData] = useState<FormData>(
     {
-      user: ''
+      user: '',
     }
   );
 
@@ -39,6 +40,7 @@ export default function ResultGithub() {
 
       .then(response => {
         setUserData(response.data);
+        console.log(userData);
       }).catch((error) => {
         setError(error.response.data);
         setUserData(undefined);
@@ -76,7 +78,7 @@ export default function ResultGithub() {
             (userData && <CardResult userDTO={userData} />)
             || (error && <div className="container-card">
                <NotFound 
-               title='Usuário não encontrado' />
+               title='Erro ao buscar usuário' />
              
             </div>)}
 

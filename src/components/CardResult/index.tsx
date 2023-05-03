@@ -8,19 +8,25 @@ type Props = {
 
 export default function CardResult({ userDTO }: Props) {
   return (
-    <div className='container-card card-result mr-top-card' >
-      <div className='card-result-container'>
-        <div className='img-result'>
-          <img src={userDTO.imgUrl} alt={userDTO.name} />
-        </div>
-        <div className='data-result-container mr-top-left-card-result'>
-          <h3 className='title-card-result mr-title-card-result'>Informações</h3>
-          <p>Perfil:{userDTO.profile}</p>
-          <p >Seguidores: {userDTO.followers}</p>
-          <p >Localidade: {userDTO.locale}</p>
-          <p >Nome: {userDTO.name}</p>
-        </div>
+    <>
+
+    <div className='container card-result'>
+   <div>
+    <div>
+      <img src={userDTO.avatar_url} alt={userDTO.name} />
+    </div>
+   </div>
+      <div>
+        <h3 >Informações</h3>
+        <p>Perfil:<a href={userDTO.html_url}>{userDTO.html_url}</a></p>
+        <p >Seguidores: {userDTO.followers}</p>
+        <p >Localidade: {userDTO.location}</p>
+        <p >Nome: {userDTO.name}</p>
       </div>
     </div>
+     
+  </>
+      
+   
   );
 }
