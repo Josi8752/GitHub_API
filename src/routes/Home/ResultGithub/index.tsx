@@ -77,9 +77,9 @@ export default function ResultGithub() {
           {
             (userData && <CardResult userDTO={userData} />)
             || (error && <div className="container-card">
-               <NotFound 
-               title='Erro ao buscar usuário' />
-             
+              <NotFound
+                title='Erro ao buscar usuário' />
+
             </div>)}
 
         </section>

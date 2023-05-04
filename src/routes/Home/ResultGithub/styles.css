@@ -5,24 +5,19 @@
     color: var(--color-font-secundary);
     font-size: 20px;
     padding: 30px;
+    margin: 10px;
 }
 
-.input {
+#input {
     width: 240px;
     height: 40px;
     background-color: var(--color-bg-secundary);
     border: 1px solid var(--color-border);
     border-radius: 4px;
-    padding: 8px 17px;
-
-}
-
-#input {
-    height: 24px;
-    border: none;
     font-size: 16px;
     font-weight: 400;
-    background-color: var(--color-bg-secundary);
+    padding: 8px 17px;
+
 }
 
 .input input::placeholder {

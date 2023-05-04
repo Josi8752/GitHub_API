@@ -6,7 +6,7 @@ type Props = {
 
 export default function NotFound({ title }: Props) {
   return (
-    <p className='title-not-found'>{title}</p>
+    <p className='title-not-found container'>{title}</p>
   );
 
 }

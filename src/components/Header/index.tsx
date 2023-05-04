@@ -6,7 +6,7 @@ export default function Header() {
         <header className='header'>
             <nav>
                 <div className='container'>
-                <Link to='/home'><h1> Github API</h1></Link>
+                    <Link to='/home'><h1> Github API</h1></Link>
                 </div>
             </nav>
         </header>
